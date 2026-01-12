@@ -1,0 +1,30 @@
+# Normalization configuration example
+
+[input]
+patterns = ["*.log", "*.json", "*.csv"]
+
+[sources.events]
+pattern = "*.log"
+parser = "regex"
+regex = '^\[(?P<timestamp>[^\]]+)\] (?P<source>\w+): (?P<message>.*)'
+timestamp_field = "timestamp"
+timestamp_format = "%Y-%m-%d %H:%M:%S"
+table = "events"
+deduplicate = true
+
+[sources.records]
+pattern = "*.json"
+parser = "json"
+json_path = "data.items"
+timestamp_field = "ts"
+timestamp_format = "epoch_ms"
+table = "records"
+
+[sources.data]
+pattern = "*.csv"
+parser = "csv"
+delimiter = ","
+has_header = true
+timestamp_field = "created_at"
+timestamp_format = "%Y-%m-%dT%H:%M:%S"
+table = "data"

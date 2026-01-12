@@ -1,0 +1,37 @@
+# Correlation rules configuration example
+
+[[rules]]
+name = "event_sequence"
+source_table = "events"
+target_table = "records"
+type = "temporal"
+join_field = "entity_id"
+time_window = "5m"
+time_direction = "before"
+score_weight = 2.0
+
+[[rules]]
+name = "location_proximity"
+source_table = "events"
+target_table = "records"
+type = "spatial"
+spatial_field = "location"
+spatial_threshold = 500
+score_weight = 3.0
+
+[[rules]]
+name = "same_entity"
+source_table = "events"
+target_table = "records"
+type = "cooccurrence"
+join_field = "entity_id"
+score_weight = 1.5
+
+[[rules]]
+name = "temporal_cluster"
+source_table = "events"
+target_table = "events"
+type = "temporal"
+time_window = "10m"
+time_direction = "both"
+score_weight = 1.0

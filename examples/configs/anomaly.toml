@@ -1,0 +1,22 @@
+# Anomaly detection configuration example
+
+[detection.statistical]
+method = "isolation_forest"
+contamination = 0.05
+features = ["event_count", "value", "duration"]
+
+[detection.behavioral]
+baseline_window = "24h"
+deviation_threshold = 2.5
+aggregation = "count"
+bucket_size = "1h"
+
+[detection.sequence]
+type_column = "event_type"
+expected_patterns = [
+    ["start", "process", "complete"],
+    ["start", "process", "error"],
+    ["login", "action", "logout"],
+]
+flag_unexpected = true
+max_gap_seconds = 3600

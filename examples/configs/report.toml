@@ -1,0 +1,53 @@
+# Report template configuration example
+
+title = "Data Analysis Report"
+
+[[sections]]
+name = "Summary"
+type = "auto_summary"
+tables = ["events", "records", "anomalies", "correlations"]
+
+[[sections]]
+name = "Timeline"
+type = "timeline"
+source = "events"
+timestamp_column = "timestamp"
+interval_hours = 1
+
+[[sections]]
+name = "Top Entities"
+type = "query"
+query = """
+SELECT entity_type, value, COUNT(*) as occurrences
+FROM entities
+GROUP BY entity_type, value
+ORDER BY occurrences DESC
+LIMIT 20
+"""
+
+[[sections]]
+name = "High Severity Anomalies"
+type = "table"
+source = "anomalies"
+filter = "severity IN ('HIGH', 'CRIT')"
+limit = 20
+
+[[sections]]
+name = "Recent Activity"
+type = "query"
+query = """
+SELECT timestamp, source, message
+FROM events
+ORDER BY timestamp DESC
+LIMIT 10
+"""
+
+[[sections]]
+name = "Correlation Summary"
+type = "query"
+query = """
+SELECT rule_name, correlation_type, COUNT(*) as count, AVG(score) as avg_score
+FROM correlations
+GROUP BY rule_name, correlation_type
+ORDER BY count DESC
+"""

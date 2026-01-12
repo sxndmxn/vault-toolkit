@@ -1,0 +1,11 @@
+[
+  {"ts": 1736467200000, "entity_id": "USR001", "type": "login", "location": "37.7749,-122.4194"},
+  {"ts": 1736470800000, "entity_id": "USR001", "type": "action", "location": "37.7749,-122.4194"},
+  {"ts": 1736474400000, "entity_id": "USR002", "type": "login", "location": "40.7128,-74.0060"},
+  {"ts": 1736478000000, "entity_id": "USR001", "type": "logout", "location": "37.7749,-122.4194"},
+  {"ts": 1736481600000, "entity_id": "USR003", "type": "login", "location": "51.5074,-0.1278"},
+  {"ts": 1736485200000, "entity_id": "USR002", "type": "action", "location": "40.7128,-74.0060"},
+  {"ts": 1736488800000, "entity_id": "USR003", "type": "action", "location": "51.5074,-0.1278"},
+  {"ts": 1736492400000, "entity_id": "USR002", "type": "logout", "location": "40.7128,-74.0060"},
+  {"ts": 1736496000000, "entity_id": "USR003", "type": "logout", "location": "51.5074,-0.1278"}
+]

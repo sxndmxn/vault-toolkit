@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vault-toolkit"
+version = "0.1.0"
+description = "Offline-first data analysis tools"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    "polars>=1.0",
+    "pyarrow>=15.0",
+    "duckdb>=1.0",
+    "click>=8.0",
+    "tomli-w>=1.0",
+    "scikit-learn>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.0",
+]
+
+[project.scripts]
+vt = "vault_toolkit.cli:cli"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vault_toolkit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

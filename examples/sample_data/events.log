@@ -1,0 +1,15 @@
+[2025-01-10 00:00:00] app: User login from 192.168.1.1
+[2025-01-10 00:15:00] app: Session started for user@example.com
+[2025-01-10 00:30:00] web: Request to /api/data from 192.168.1.1
+[2025-01-10 01:00:00] api: Data export initiated by admin@company.com
+[2025-01-10 01:15:00] app: File download: report_2025.pdf
+[2025-01-10 01:30:00] web: Connection from 10.0.0.50
+[2025-01-10 02:00:00] api: Query executed: SELECT * FROM users
+[2025-01-10 02:30:00] app: User logout from 192.168.1.1
+[2025-01-10 03:00:00] web: Request from 172.16.0.100
+[2025-01-10 03:30:00] api: Error: Connection timeout at 192.168.1.200
+[2025-01-10 04:00:00] app: New user registration: newuser@domain.org
+[2025-01-10 04:30:00] web: API call to https://external.service.com/api/v2
+[2025-01-10 05:00:00] api: Batch job completed
+[2025-01-10 06:00:00] app: System health check passed
+[2025-01-10 07:00:00] web: Traffic spike detected from 203.0.113.0/24

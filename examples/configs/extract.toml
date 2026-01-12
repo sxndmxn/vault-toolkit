@@ -1,0 +1,34 @@
+# Entity extraction configuration example
+
+[entities.identifier]
+pattern = '\b([A-Z]{2,3}\d{2,4})\b'
+normalize = "uppercase"
+type = "identifier"
+
+[entities.email]
+pattern = "builtin:email"
+type = "email"
+
+[entities.ipv4]
+pattern = "builtin:ipv4"
+type = "ip_address"
+
+[entities.url]
+pattern = "builtin:url"
+type = "url"
+
+[entities.coordinate]
+pattern = '\b(-?\d{1,3}\.\d+,\s*-?\d{1,3}\.\d+)\b'
+type = "coordinate"
+
+[entities.timestamp]
+pattern = '\b(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})\b'
+type = "timestamp"
+
+[entities.uuid]
+pattern = "builtin:uuid"
+type = "uuid"
+
+[entities.phone]
+pattern = '\b(\+?1?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4})\b'
+type = "phone"
