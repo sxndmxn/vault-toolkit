@@ -4,13 +4,18 @@ Offline-first data analysis tools. No network dependencies, portable, composable
 
 ## Installation
 
+Use Python 3.11 or newer.
+Run these commands from the repository root.
+
 ```bash
 # Using uv (recommended)
-uv pip install -e .
+uv sync --locked
 
-# Or pip
+# Or use pip inside an active virtual environment
 pip install -e .
 ```
+
+With uv, prefix the commands below with `uv run`, such as `uv run vt --help`.
 
 ## Quick Start
 
@@ -86,13 +91,13 @@ See `examples/configs/` for configuration file examples:
 
 ```bash
 # Install with dev dependencies
-uv pip install -e ".[dev]"
+uv sync --locked --extra dev
 
 # Run tests
-pytest
+uv run pytest
 
 # Run specific test
-pytest tests/test_normalize.py -v
+uv run pytest tests/test_normalize.py -v
 ```
 
 ## Tech Stack
